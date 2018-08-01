@@ -1,0 +1,409 @@
+/* Gestione Header */
+
+button {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+
+#welcomePageBtn {
+	width: 100px;
+	border-radius: 20px;
+	border: 1px ridge silver;
+	color: black;
+	font-size: 1.5em;
+	font-weight: bold italic;
+}
+
+#main-buttons-area {
+	float: right;
+}
+
+#main-buttons-area button {
+	float: right;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+#requests-box {
+	display: none;
+	border: 1px ridge silver;
+	position: absolute;
+	top: 60px;
+	right: 20px;
+	width: 250px;
+	height: 200px;
+	background-color: black;
+	z-index: 30;
+}
+
+/* Gestione area centrale */
+
+#centralArea {
+	position: fixed;
+	top: 101px;
+	bottom: 101px;
+	left: 0px;
+	right: 0px;
+}
+
+.show, .hide {
+	display: block;
+}
+
+#friendsSection, #searchSection, #centralSection {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/* Gestione ricerca*/
+
+#searchSection {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 300px;
+	height: 100%;
+	border-right: 1px ridge silver;
+	overflow: auto;
+}
+
+#searchForm {
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px ridge silver;
+}
+
+input {
+	border-radius: 15px;
+	border: 2px ridge silver;
+	color: black;
+	background-color: silver;
+	margin-top: 10px;
+}
+
+.submit {
+	float: right;
+	border: 2px solid silver;
+	margin-right: 10px;
+}
+
+#searchForm input[type="text"] {
+	float: left;
+	margin-left: 10px;
+	text-indent: 10px;
+}
+
+.searchButtons {
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+#results {
+	margin-bottom: 0px;
+}
+
+.intro {
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: silver;
+	font-size: 15px;
+	border-bottom: 1px ridge silver;
+}
+
+.result {
+	width: 100%;
+	height: 60px;
+	line-height: 50px;
+	color: silver;
+	font-size: 15px;
+	text-indent: 10px;
+	border-bottom: 1px ridge silver;
+}
+
+#results .result .text, #friendsListDiv .result .text {
+	position: absolute;
+	left: 0;
+	right: 50px;
+	width: auto;
+	overflow-x: auto;
+	overflow-y: none;
+}
+
+.not-found {
+	position: static; left: none; right: none;
+	text-align: center;
+}
+
+.requestButtons, .deleteButtons {
+	float: right;
+	margin: 10px;
+	margin-left: 0px;
+}
+
+/* Gestione sezione centrale */
+
+#centralSection {
+	position: absolute;
+	left: 301px;
+	right: 11px;
+	height: 100%;
+	background-image: url("imgs/background.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+#center-to-friends {
+	display: none;
+}
+
+#playlist-box {
+	background-color: black;
+}
+
+#deletePlaylistBtn {
+	position: relative;
+	left: 20px;
+}
+
+#titleSection {
+	width: 100%;
+	height: 60px;
+	border-bottom: 1px ridge silver;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#newPlaylistTitle {
+	border-radius: 0px;
+	background: lightgrey;
+	color: black;
+	font-size: 1.3em;
+	border: 2px ridge silver;
+	text-indent: 10px;
+	height: 30px;
+	width: 250px;
+	margin-top: 0px;
+}
+
+.squareBox {
+	position: absolute;
+	left: 0px;
+	height: 50px;
+	width: 50px;
+}
+
+.songInfoEl {
+	position: absolute;
+	right: 0px;
+	left: 50px;
+	line-height: 25px;
+	text-align: left;
+}
+
+.navigable-box {
+	display: none;
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px ridge silver;
+}
+
+.navigable-box button {
+	margin: 10px;
+}
+
+.navigable-box button:first-of-type {
+	float: left;
+}
+
+.navigable-box button:nth-of-type(2) {
+	float: right;
+}
+
+/* Gestione Amici */
+
+#friendsSection {
+	position: absolute;
+	display: block;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	height: 100%;
+	border-left: 1px ridge silver;
+	background-color: black;
+}
+
+#showHideFriendsListBar {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width:10px;
+	height:100%;
+	/* La parte seguente serve per allineare al centro la freccetta */
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+#showFriendsListIcon, #hideFriendsListIcon {
+	width: 0px !important;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 20px;
+	border-radius: 0px;
+	color: black;
+	border: 0px;
+}
+
+#showFriendsListIcon {
+	display: block;
+}
+
+#hideFriendsListIcon {
+	display: none;
+}
+
+i.fa.fa-caret-left, i.fa.fa-caret-right {
+	margin-left: -2px;
+}
+
+#friendsListDiv {
+	border-left: 1px ridge silver;
+	display: none;
+	width: 300px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.minimize {
+	width: 11px;
+}
+
+.maximize {
+	width: 311px;
+}
+
+/* Gestione Footer e canzone in riproduzione */
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: silver;
+	height: 100px;
+	border-top: 1px ridge silver;
+	background-color: black;
+}
+
+#songArea {
+	width: 85%;
+	height: 100%;
+	margin: auto;
+}
+
+#songInfo {
+	padding-left: 20px;
+	margin-top: 10px;
+	height: 30px;
+	color: silver;
+	text-align: center;
+}
+
+#reproductionSong {
+	width: 100%;
+}
+
+/* Gestione responsive */
+
+@media screen and (max-width: 800px) {
+	#searchSection, #centralSection, #friendSection {
+		width: 100%;
+		min-width: 300px;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+	#searchSection {
+		right: 0;
+	}
+
+	#friendsSection {
+		left: 0;
+		display: block;
+	}
+
+	#centralSection {
+		left: 0;
+		right: 0;
+	}
+
+	.navigable-box {
+		display: block !important;
+	}
+
+	.hide {
+		display: none !important;
+	}
+
+	#showHideFriendsListBar {
+		display: none !important;
+	}
+
+	#friendsListDiv {
+		width: 100%;
+		border-left: 0px;
+	}
+
+	#friendsSection {
+		left: 0px;
+		width: 100%;
+		border: 0px;
+	}
+
+	#friendsListDiv {
+		border-left: 0px;
+		width: 100%;
+		height: 100%;
+		position: static;
+		top: none;
+		bottom: none;
+		right: none;
+		left: none;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	#friendsSection, #searchSection, #centralSection {
+		
+	}
+
+	#name-logo-box h2 {
+		display: none;
+	}
+
+	#name-logo-box {
+		width: 100px;
+	}
+}
+
+#cancelButton {
+	width: 60px;
+	height: 22px;
+	border-radius: 15px;
+	border: 2px solid silver;
+	color: black;
+	background-color: silver;
+	margin-top: 10px;
+}

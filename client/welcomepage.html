@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<title>WebPlayerMp3</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Matteo Farina">
+	<meta name="keywords" content="Musica, Playlist, Canzoni, Canzone, Streaming, Mp3,">
+	<meta name="description" content="Applicazione Web per la riproduzione di musica in streaming">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" name="text/html">
+	<link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/welcomepage.css">
+	<link rel="shortcut icon" type="image/png" href="icons/icon50.png">
+	<script type="text/javascript" src="serverServices.js"></script>
+	<script type="text/javascript" src="validators.js"></script>
+	<script type="text/javascript" src="welcomepage.js"></script>
+</head>
+
+<body onload="init()">
+	<header>
+		<div id="name-logo-box">
+			<div id="logo">
+				<img id="logo-img" src="icons/icon50.png" width="50" height="50" alt="logo-icon">
+			</div>
+			<h2><strong><em>WebPlayerMp3</em></strong></h2>
+		</div>
+	</header>
+
+	<section id="cental-area">
+
+		<div id="login-area">
+			<form id="login-form">
+				<div id="email-user-box" class="input-field">
+					<label for="emailUser" id="email-user-label">E-mail:&nbsp;</label>
+					<input type="text" id="emailUser" name="emailUser" placeholder="esempio@mail.com" autofocus autocomplet required>
+				</div>
+				<div id="password-user-box" class="input-field">
+					<label for="passwordUser" id="password-user-label">Password:&nbsp;</label>
+					<input type="password" id="passwordUser" name="passwordUser" placeholder="password" autocomplete required>
+				</div>
+				<input type="submit" class="submit" name="login-button" id="login-button" value="Log In" >
+			</form>
+		</div>
+
+		<picture id="img-background">
+			<img src="imgs/colormusic.png" type="image/png" alt="WebPlayerMp3">
+		</picture>
+
+		<div id="signin-area">
+			<form id="signin-form">
+				<div id="welcome-new-user">
+					<h4>Non sei ancora registrato? Registrati adesso!</h4>
+				</div>
+				<div id="first-name-box" class="left-signin-field input-field">
+					<label for="firstName" class="signin-label">Nome: </label>
+					<input type="text" name="firstName" id="firstName" class="signin-field" placeholder="Mario" required>
+				</div>
+				<div id="last-name-box" class="right-signin-field input-field">
+					<label for="lastName" class="signin-label">Cognome: </label>
+					<input type="text" name="lastName" id="lastName" class="signin-field" placeholder="Rossi" required>
+				</div>
+				<div id="email-new-box" class="left-signin-field input-field">
+					<label for="emailNewUser" class="signin-label">E-mail: </label>
+					<input type="text" name="emailNewUser" id="emailNewUser" class="signin-field" placeholder="mariorossi@mail.it" required>
+				</div>
+				<div id="password-new-box" class="right-signin-field input-field">
+					<label for="passwordNewUser" class="signin-label">Password: </label>
+					<input type="password" name="passwordNewUser" id="passwordNewUser" class="signin-field" placeholder="password" required>
+				</div>
+				<input type="submit" name="signin-button" value="Sign In" class="signin-field" >
+			</form>
+		</div>
+	</section>
+
+	<footer>
+		<span>&copy; Copyright by Matteo farina</span>
+		<a href="mailto:matteofarina01@gmail.com" id="contact">Contact</a>
+	</footer>
+</body>
+</html>

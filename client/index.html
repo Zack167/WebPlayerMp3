@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<title>WebPlayerMp3</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Matteo Farina">
+	<meta name="keywords" content="Musica, Playlist, Canzoni, Canzone, Streaming, Mp3,">
+	<meta name="description" content="Applicazione Web per la riproduzione di musica in streaming">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html">
+	<link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/homepage.css">
+	<link rel="shortcut icon" type="text/css" href="icons/icon50.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Per le icone dell'applicazione -->
+	<script type="text/javascript">
+		<!--
+			function showSearchSection() {
+				document.getElementById("searchSection").classList.remove("hide");
+				document.getElementById("searchSection").classList.add("show");
+				document.getElementById("navigable-search").classList.remove("hide");
+				document.getElementById("navigable-search").classList.add("show");
+
+				document.getElementById("centralSection").classList.remove("show");
+				document.getElementById("centralSection").classList.add("hide");
+				document.getElementById("navigable-center").classList.remove("show");
+				document.getElementById("navigable-center").classList.add("hide");
+
+				document.getElementById("friendsSection").classList.remove("show");
+				document.getElementById("friendsSection").classList.add("hide");
+				document.getElementById("friendsListDiv").classList.remove("show");
+				document.getElementById("friendsListDiv").classList.add("hide");
+				document.getElementById("navigable-friend").classList.remove("show");
+				document.getElementById("navigable-friend").classList.add("hide");
+			}
+			function showCentralSection() {
+				document.getElementById("searchSection").classList.remove("show");
+				document.getElementById("searchSection").classList.add("hide");
+				document.getElementById("navigable-search").classList.remove("show");
+				document.getElementById("navigable-search").classList.add("hide");
+
+				document.getElementById("centralSection").classList.remove("hide");
+				document.getElementById("centralSection").classList.add("show");
+				document.getElementById("navigable-center").classList.remove("hide");
+				document.getElementById("navigable-center").classList.add("show");
+
+				document.getElementById("friendsSection").classList.remove("show");
+				document.getElementById("friendsSection").classList.add("hide");
+				document.getElementById("friendsListDiv").classList.remove("show");
+				document.getElementById("friendsListDiv").classList.add("hide");
+				document.getElementById("navigable-friend").classList.remove("show");
+				document.getElementById("navigable-friend").classList.add("hide");
+			}
+			function showFriendsSection() {
+				document.getElementById("navigable-friend").classList.remove("hide");
+				document.getElementById("navigable-friend").classList.add("show");
+				document.getElementById("friendsListDiv").classList.remove("hide");
+				document.getElementById("friendsListDiv").classList.add("show");
+				document.getElementById("friendsSection").classList.remove("hide");
+				document.getElementById("friendsSection").classList.add("show");
+
+				document.getElementById("searchSection").classList.remove("show");
+				document.getElementById("searchSection").classList.add("hide");
+				document.getElementById("navigable-search").classList.remove("show");
+				document.getElementById("navigable-search").classList.add("hide");
+
+				document.getElementById("centralSection").classList.remove("show");
+				document.getElementById("centralSection").classList.add("hide");
+				document.getElementById("navigable-center").classList.remove("show");
+				document.getElementById("navigable-center").classList.add("hide");
+			}
+		// -->
+	</script>
+	<script type="text/javascript" src="serverServices.js"></script>
+	<script type="text/javascript" src="homepage.js"></script>
+</head>
+
+<body onload="init();">
+	<header>
+		<div id="name-logo-box">
+			<div id="logo">
+				<a href="#" name="logo"><img id="logo-img" src="icons/icon50.png" type="image/png" width="50" height="50" alt="logo-icon"></a>
+			</div>
+			<h2><strong><em>WebPlayerMp3</em></strong></h2>
+		</div>
+		<div id="main-buttons-area">
+			<button id="logout-btn"><i class="fa fa-sign-out"></i></button>
+			<button id="requests-btn"><i class="fa fa-envelope-o" ></i></button>
+			<div id="requests-box"></div>
+			<button id="createPlaylistBtn"> <i class="fa fa-plus-square"></i></button>
+		</div>
+	</header>
+
+	<div id="centralArea">
+
+		<div id="searchSection" class="hide">
+			<div id="navigable-search" class="navigable-box hide">
+				<button id="search-to-friend" onclick="showFriendsSection();"><i class="fa fa-group"></i></button>
+				<button id="search-to-center" onclick="showCentralSection();"><i class="fa fa-bars"></i></button>
+			</div>
+			<form id="searchForm">
+				<input type="text" name="keyword" id="keyword" placeholder="Cerca...">
+				<input type="submit" name="searchBtn" id="searchBtn" class="submit" value="Cerca">
+			</form>
+			<div id="results"></div>
+		</div>
+
+		<div id="centralSection" class="show" style="background: url('imgs/background.jpg') no-repeat center">
+			<div id="navigable-center" class="navigable-box show">
+				<button id="center-to-search" onclick="showSearchSection();"><i class="fa fa-search"></i></button>
+				<button id="center-to-friend" onclick="showFriendsSection();"><i class="fa fa-group"></i></button>
+			</div>
+			<div id="playlist-box"></div>
+		</div>
+
+		<div id="friendsSection" class="hide minimize">
+			<div id="navigable-friend" class="navigable-box hide">
+				<button id="friend-to-center" onclick="showCentralSection();"><i class="fa fa-bars"></i></button>
+				<button id="friend-to-search" onclick="showSearchSection();"><i class="fa fa-search"></i></button>
+			</div>
+			<div id="showHideFriendsListBar">
+				<button id="showFriendsListIcon"><i class="fa fa-caret-left"></i></button>
+				<button id="hideFriendsListIcon"><i class="fa fa-caret-right"></i></button>
+			</div>
+			<div id="friendsListDiv"></div>
+		</div>
+	</div>
+	
+	<footer>
+		<div id="songArea">
+			<div id="songInfo"></div>
+			<audio id="reproductionSong" controls="controls"></audio>
+		</div>
+	</footer>
+</body>
+</html>
